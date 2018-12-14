@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>eu.europa.eurlex.nlex</groupId>
+  <artifactId>ConnectorBase</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.14.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <specVersion>2.0</specVersion>
+          <strict>false</strict>
+          <schemaDirectory>${basedir}/src/main/resources/xsd</schemaDirectory>
+          <schemaIncludes>
+            <include>result/result-list.xsd</include>
+            <include>query.xsd</include>
+          </schemaIncludes>
+          <bindingDirectory>${basedir}/src/main/resources/xsd</bindingDirectory>
+          <bindingIncludes>
+            <include>bindings.xml</include>
+          </bindingIncludes>
+          <args>
+            <arg>-extension</arg>
+            <arg>-Xnamespace-prefix</arg>
+          </args>
+          <generateDirectory>${basedir}/target/generated-sources</generateDirectory>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-namespace-prefix</artifactId>
+            <version>1.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+</project>
