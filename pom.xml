@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
 
+  <modelVersion>4.0.0</modelVersion>
   <groupId>eu.europa.eurlex.nlex</groupId>
   <artifactId>ConnectorBase</artifactId>
   <packaging>jar</packaging>
@@ -61,7 +61,7 @@
           <schemaDirectory>${basedir}/src/main/resources/xsd</schemaDirectory>
           <schemaIncludes>
             <include>result/result-list.xsd</include>
-            <include>query.xsd</include>
+            <include>query/query.xsd</include>
           </schemaIncludes>
           <bindingDirectory>${basedir}/src/main/resources/xsd</bindingDirectory>
           <bindingIncludes>
