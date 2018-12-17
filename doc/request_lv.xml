@@ -1,0 +1,13 @@
+<request lang="lv-LV" output_format="http://n-lex.europa.eu/xml/schema/result/result-list.xsd">
+    <navigation> 
+        <page number="1"  />
+        <request-id></request-id>
+    </navigation>
+    <criteria>
+      <and>
+		 <words idx-name="nlex:title" lang="lv-LV">
+		 	<contains>darba likums</contains>
+         </words>         
+      </and>
+    </criteria>
+</request>

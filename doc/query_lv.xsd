@@ -1,0 +1,55 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xsd:schema xmlns:xsd = "http://www.w3.org/2001/XMLSchema" elementFormDefault = "qualified">
+	
+	<xsd:redefine schemaLocation = "http://localhost:7779/portail/xml/schema/query/nlex-query.xsd">
+		
+		<xsd:simpleType name="locale_lang">
+			<xsd:restriction base="locale_lang">
+				<xsd:enumeration value="lv-LV" />
+			</xsd:restriction>
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="intIndexName">
+			<xsd:restriction base="docTypeIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="stringIndexName">
+			<xsd:restriction base="docTypeIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="docTypeIndexName">
+			<xsd:restriction base="docTypeIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="docNumberIndexName">
+			<xsd:restriction base="docNumberIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="OJNameIndexName">
+			<xsd:restriction base="OJNameIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="dateIndexName">
+       		<xsd:restriction base="dateIndexName">
+               <xsd:enumeration value="nlex:date-of-pub" />
+      		</xsd:restriction>
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="OJNumberIndexName">
+       		<xsd:restriction base="OJNumberIndexName">
+      		</xsd:restriction>
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="sectionIndexName">
+			<xsd:restriction base="OJNameIndexName" />
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="criteria-encoding">
+			<xsd:restriction base="criteria-encoding">
+				<xsd:enumeration value="xml-entities-decimal" />
+			</xsd:restriction>
+		</xsd:simpleType>
+		
+	</xsd:redefine>
+		
+</xsd:schema>
