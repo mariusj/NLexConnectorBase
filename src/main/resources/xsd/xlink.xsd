@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink">
- 
- <xs:attribute name="href" type="xlink:hrefType"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.w3.org/1999/xlink"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
 
- <xs:simpleType name="hrefType">
-  <xs:restriction base="xs:anyURI"/>
- </xs:simpleType>
+  <!--  minimal xlink.xsd required by N-Lex schema -->
+
+  <xs:attribute name="href" type="xlink:hrefType" />
+
+  <xs:simpleType name="hrefType">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
 
 </xs:schema>
