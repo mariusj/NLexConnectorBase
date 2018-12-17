@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:nlex="http://n-lex.europa.eu/">
+
+  <xsd:redefine schemaLocation="https://webgate4acceptance.ec.europa.eu/n-lex/xml/schema/query/nlex-query.xsd">
+
+    <!-- 2.1. Word indexes -->
+    <!-- declare the language of the database -->
+    <xsd:simpleType name="locale_lang">
+      <xsd:restriction base="locale_lang">
+        <xsd:enumeration value="es-ES" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="wordsIndexName">
+      <xsd:restriction base="wordsIndexName">
+        <xsd:pattern value="nlex:title" />
+        <xsd:pattern value="nlex:fulltext" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- 2.4. Date type indexes -->
+    <xsd:simpleType name="dateIndexName">
+      <xsd:restriction base="dateIndexName">
+        <xsd:pattern value="nlex:date-of-doc" />
+        <xsd:pattern value="nlex:date-of-pub" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="single_year">
+      <xsd:restriction base="single_year">
+        <!-- years from 1968 to undefined -->
+        <xsd:minInclusive value="1968" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- suggered by M. Thomas Cordonnier -->
+    <xsd:simpleType name="criteria-encoding">
+      <xsd:restriction base="criteria-encoding">
+        <xsd:enumeration value="xml-entities-decimal" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- a drop-down list for legal document types  -->
+    <xsd:simpleType name="doc_type">
+      <xsd:restriction base="doc_type">
+        <xsd:enumeration value=""     nlex:display="      " />
+        <xsd:enumeration value="1020" nlex:display="Acuerdo" />
+        <xsd:enumeration value="1180" nlex:display="Acuerdo Internacional"/>
+        <xsd:enumeration value="1250" nlex:display="Auto" />
+        <xsd:enumeration value="1390" nlex:display="Circular" />
+        <xsd:enumeration value="1490" nlex:display="C&#243;digo Internacional" />
+        <xsd:enumeration value="62" nlex:display="Comunicaci&#243;n" />
+        <xsd:enumeration value="1070" nlex:display="Constituci&#243;n" />
+        <xsd:enumeration value="1590" nlex:display="Correcci&#243;n (errores o erratas)" />
+        <xsd:enumeration value="1100" nlex:display="Declaraci&#243;n" />
+        <xsd:enumeration value="1510" nlex:display="Decreto" />
+        <xsd:enumeration value="1520" nlex:display="Decreto Foral" />
+        <xsd:enumeration value="1480" nlex:display="Decreto Foral Legislativo" />
+        <xsd:enumeration value="1470" nlex:display="Decreto Legislativo" />
+        <xsd:enumeration value="1500" nlex:display="Decreto-ley" />
+        <xsd:enumeration value="1325" nlex:display="Decreto-ley Foral" />
+        <xsd:enumeration value="1120" nlex:display="Enmienda" />
+        <xsd:enumeration value="1410" nlex:display="Instrucci&#243;n" />
+        <xsd:enumeration value="1300" nlex:display="Ley" />
+        <xsd:enumeration value="1450" nlex:display="Ley Foral" />
+        <xsd:enumeration value="1290" nlex:display="Ley Org&#225;nica" />
+        <xsd:enumeration value="41"   nlex:display="Nota Diplom&#225;tica" />
+        <xsd:enumeration value="1350" nlex:display="Orden" />
+        <xsd:enumeration value="1540" nlex:display="Orden Foral" />
+        <xsd:enumeration value="1679" nlex:display="Otros" />
+        <xsd:enumeration value="63" nlex:display="Providencia" />
+        <xsd:enumeration value="1340" nlex:display="Real Decreto" />
+        <xsd:enumeration value="1310" nlex:display="Real Decreto Lesgislativo" />
+        <xsd:enumeration value="1320" nlex:display="Real Decreto-ley" />
+        <xsd:enumeration value="1210" nlex:display="Recomendaci&#243;n" />
+        <xsd:enumeration value="1676" nlex:display="Reforma" />
+        <xsd:enumeration value="1220" nlex:display="Reglamento" />
+        <xsd:enumeration value="1370" nlex:display="Resoluci&#243;n" />
+        <xsd:enumeration value="1240" nlex:display="Sentencia" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- removing the name of the Official Journal (There is only one: BOE)  -->
+    <xsd:simpleType name="stringIndexName">
+      <xsd:restriction base="stringIndexName">
+        <!-- Indexes existant dans N-Lex -->
+        <xsd:pattern value="nlex:doc_type" />
+        <!--<xsd:pattern value="nlex:OJ_Name" /> -->
+        <xsd:pattern value="nlex:doc_number" />
+        <xsd:pattern value="nlex:OJ_Number" />
+        <!-- indexes supplementaires : espace de nommage obligatoire -->
+        <xsd:pattern value="(\c+):(\c+)" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="OJNameIndexName">
+      <xsd:restriction base="xsd:QName">
+        <!-- Indexes existant dans N-Lex -->
+        <!-- <xsd:pattern value="nlex:OJ_Name" /> -->
+        <!-- indexes supplementaires : espace de nommage obligatoire -->
+        <xsd:pattern value="(\c+):(\c+)" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- removing the section of the legal document (we don't use sections in our search engine)  -->
+    <xsd:simpleType name="sectionIndexName">
+      <xsd:restriction base="xsd:QName">
+        <!-- Indexes existant dans N-Lex -->
+        <!-- <xsd:pattern value="nlex:section-article" /> -->
+        <!-- indexes supplémentaires : espace de nommage obligatoire -->
+        <xsd:pattern value="(\c+):(\c+)" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+  </xsd:redefine>
+</xsd:schema>

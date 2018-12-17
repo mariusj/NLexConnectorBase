@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request lang="es-ES">
+	<navigation>
+		<page number="1" />
+	</navigation>
+	<criteria encoding="utf8">
+		<and>
+			<words idx-name="nlex:fulltext" lang="es-ES">
+				<or>
+					<and>
+						<contains>firma</contains>
+						<contains>electronica</contains>
+					</and>
+					<contains>certificado electronico</contains>
+				</or>
+			</words>
+			<words idx-name="nlex:title" lang="es-ES">
+				<contains>orden</contains>
+			</words>
+			<date idx-name="nlex:date-of-pub" comparator="ge" year="2001" month="01" day="03" />
+			<date idx-name="nlex:date-of-pub" comparator="le" year="2007" month="04" day="13" />
+		</and>
+	</criteria>
+</request>

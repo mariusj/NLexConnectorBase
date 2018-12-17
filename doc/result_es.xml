@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result status="OK" site="http://www.boe.es/" connector="http://www.boe.es/nlex/nlex_connector.php">
+  <result-list>
+    <navigation>
+      <hits>1186</hits>
+      <page number="0" size="20"/>
+      <request-id>(((doc=(((firma) and (electronica)) or (certificado electronico))) and (tit=(orden))) and (not(id_src=3)))||fpu desc ref asc</request-id>
+    </navigation>
+    <documents count="20">
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>297</OJ_Number>
+            <OJ_Page from="121303" to="121338"/>
+            <date_of_pub day="10" month="12" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-16895"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/12/10/pdfs/BOE-A-2018-16895.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden CNU/1308/2018, de 28 de noviembre, por la que se aprueban las bases reguladoras para la concesión por parte del Centro para el Desarrollo Tecnológico Industrial, E.P.E., de ayudas públicas en el marco del Subprograma Estatal de I+D+i Empresarial del Plan Estatal de Investigación Científica y Técnica y de Innovación 2017-2020, destinadas a empresas. [Ministerio de Ciencia, Innovación y Universidades - BOE 297 de 10/12/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>293</OJ_Number>
+            <OJ_Page from="119557" to="119561"/>
+            <date_of_pub day="05" month="12" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-16615"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/12/05/pdfs/BOE-A-2018-16615.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden DEF/1292/2018, de 27 de noviembre, por la que se regulan las oficinas de asistencia en materia de registros existentes en el Ministerio de Defensa. [Ministerio de Defensa - BOE 293 de 5/12/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>293</OJ_Number>
+            <OJ_Page from="119562" to="119575"/>
+            <date_of_pub day="05" month="12" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-16616"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/12/05/pdfs/BOE-A-2018-16616.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden HAC/1293/2018, de 19 de noviembre, por la que se aprueba el modelo de declaración de alteraciones catastrales de los bienes inmuebles y se determina la información gráfica y alfanumérica necesaria para la tramitación de determinadas comunicaciones catastrales. [Ministerio de Hacienda - BOE 293 de 5/12/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>283</OJ_Number>
+            <OJ_Page from="113735" to="113737"/>
+            <date_of_pub day="23" month="11" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-15964"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/11/23/pdfs/BOE-A-2018-15964.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden HAC/1234/2018, de 14 de noviembre, por la que se modifica la Orden EHA/2043/2010, de 22 de julio, por la que se regula el procedimiento de remisión de las cuentas anuales y demás información que las entidades del sector público empresarial y fundacional del Estado han de rendir al Tribunal de Cuentas, y de la información de carácter anual y trimestral a remitir a la Intervención General de la Administración del Estado. [Ministerio de Hacienda - BOE 283 de 23/11/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>283</OJ_Number>
+            <OJ_Page from="113738" to="113741"/>
+            <date_of_pub day="23" month="11" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-15965"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/11/23/pdfs/BOE-A-2018-15965.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden HAC/1235/2018, de 14 de noviembre, por la que se modifica la Orden HAP/2161/2013, de 14 de noviembre, por la que se regula el procedimiento de rendición al Tribunal de Cuentas de las cuentas anuales y demás información por las entidades reguladas en los párrafos tercero y quinto de la disposición adicional novena de la Ley 47/2003, de 26 de noviembre, General Presupuestaria, que deben aplicar el Plan General de Contabilidad y sus adaptaciones y la información de carácter anual, trimestral y mensual a remitir a la Intervención General de la Administración del Estado por dichas entidades. [Ministerio de Hacienda - BOE 283 de 23/11/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>280</OJ_Number>
+            <OJ_Page from="112508" to="112803"/>
+            <date_of_pub day="20" month="11" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-15796"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/11/20/pdfs/BOE-A-2018-15796.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden ICT/1212/2018, de 12 de noviembre, por la que se actualizan los anexos II, III, IV, V, VI, VII, VIII, IX, X, XI y XII del Real Decreto 750/2010, de 4 de junio, por el que se regulan los procedimientos de homologación de vehículos de motor y sus remolques, máquinas propulsadas o remolcadas, vehículos agrícolas, así como de sistemas, partes y piezas de dichos vehículos. [Ministerio de Industria, Comercio y Turismo - BOE 280 de 20/11/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>278</OJ_Number>
+            <OJ_Page from="111948" to="111958"/>
+            <date_of_pub day="17" month="11" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-15721"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/11/17/pdfs/BOE-A-2018-15721.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden INT/1205/2018, de 14 de noviembre, por la que se establecen las bases reguladoras de las convocatorias para la concesión de subvenciones destinadas a asociaciones, fundaciones y entidades sin ánimo de lucro, cuyo objeto sea la representación y defensa de los intereses de las víctimas del terrorismo. [Ministerio del Interior - BOE 278 de 17/11/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>263</OJ_Number>
+            <OJ_Page from="106046" to="106088"/>
+            <date_of_pub day="31" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14900"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/31/pdfs/BOE-A-2018-14900.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden HAC/1147/2018, de 9 de octubre, por la que se aprueban las normas de desarrollo de lo dispuesto en los artículos 27, 101, 102 y 110 del Reglamento de los Impuestos Especiales aprobado por Real Decreto 1165/1995, de 7 de julio. [Ministerio de Hacienda - BOE 263 de 31/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>263</OJ_Number>
+            <OJ_Page from="106089" to="106111"/>
+            <date_of_pub day="31" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14901"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/31/pdfs/BOE-A-2018-14901.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden HAC/1148/2018, de 18 de octubre, por la que se modifican la Orden EHA/3434/2007, de 23 de noviembre, por la que se aprueban los modelos 322 de autoliquidación mensual, modelo individual, y 353 de autoliquidación mensual, modelo agregado, y el modelo 039 de comunicación de datos, correspondientes al régimen especial del grupo de entidades en el impuesto sobre el Valor Añadido, la Orden EHA/3012/2008, de 20 de octubre, por la que se aprueba el modelo 347 de declaración anual de operaciones con terceras personas, así como los diseños físicos y lógicos y el lugar, forma y plazo de presentación, la Orden EHA/3786/2008, de 29 de diciembre, por la que se aprueban el modelo 303 Impuesto sobre el Valor Añadido, autoliquidación, la Orden EHA/3111/2009, de 5 de noviembre, por la que se aprueba el modelo 390 de declaración-resumen anual del Impuesto sobre el Valor Añadido y se modifica el anexo I de la Orden EHA/1274/2007, de 26 de abril, por la que se aprueban los modelos 036 de declaración censal de alta, modificación y baja en el censo de empresarios, profesionales y retenedores y 037 declaración censal simplificada de alta, modificación y baja en el censo de empresarios, profesionales y retenedores, y la Orden HAP/2194/2013, de 22 de noviembre. [Ministerio de Hacienda - BOE 263 de 31/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>263</OJ_Number>
+            <OJ_Page from="106112" to="106120"/>
+            <date_of_pub day="31" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14902"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/31/pdfs/BOE-A-2018-14902.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden INT/1149/2018, de 29 de octubre, por la que se regula la organización y el funcionamiento de la Red Nacional de Radio de Emergencia. [Ministerio del Interior - BOE 263 de 31/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>257</OJ_Number>
+            <OJ_Page from="103106" to="103109"/>
+            <date_of_pub day="24" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14585"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/24/pdfs/BOE-A-2018-14585.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden CNU/1117/2018, de 8 de octubre, por la que se establece la obligatoriedad de utilizar medios electrónicos para la presentación de solicitudes, las comunicaciones y las notificaciones en el procedimiento para la obtención de la evaluación de la Agencia Nacional de Evaluación de la Calidad y Acreditación y su certificación, a los efectos de contratación de personal docente e investigador universitario. [Ministerio de Ciencia, Innovación y Universidades - BOE 257 de 24/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>254</OJ_Number>
+            <OJ_Page from="102079" to="102104"/>
+            <date_of_pub day="20" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14391"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/20/pdfs/BOE-A-2018-14391.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden ICT/1100/2018, de 18 de octubre, por la que se establecen las bases reguladoras para la concesión de apoyo financiero a la inversión industrial en el marco de la política pública de reindustrialización y fortalecimiento de la competitividad industrial. [Ministerio de Industria, Comercio y Turismo - BOE 254 de 20/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>251</OJ_Number>
+            <OJ_Page from="100670" to="100676"/>
+            <date_of_pub day="17" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-14180"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/17/pdfs/BOE-A-2018-14180.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden PCI/1077/2018, de 15 de octubre, por la que se modifica la Orden PRE/1576/2002, de 19 de junio, por la que se regula el procedimiento para el pago de obligaciones de la Administración General del Estado. [Ministerio de la Presidencia, Relaciones con las Cortes e Igualdad - BOE 251 de 17/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>246</OJ_Number>
+            <OJ_Page from="99247" to="99249"/>
+            <date_of_pub day="11" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-13895"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/11/pdfs/BOE-A-2018-13895.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Corrección de errores de la Orden INT/1005/2018, de 20 de septiembre, por la que se aprueban las bases reguladoras para la concesión de subvenciones a entidades locales adscritas a los Planes de Emergencia Nuclear. [Ministerio del Interior - BOE 246 de 11/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>243</OJ_Number>
+            <OJ_Page from="97764" to="97773"/>
+            <date_of_pub day="08" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-13711"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/08/pdfs/BOE-A-2018-13711.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden CNU/1037/2018, de 25 de septiembre, por la que se aprueban las bases reguladoras para la concesión de las ayudas públicas del Programa FTEC-Spanish Traineeship Programme. [Ministerio de Ciencia, Innovación y Universidades - BOE 243 de 8/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>240</OJ_Number>
+            <OJ_Page from="96881" to="96895"/>
+            <date_of_pub day="04" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-13494"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/04/pdfs/BOE-A-2018-13494.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden APA/1018/2018, de 17 de septiembre, por la que se establecen las bases reguladoras para la concesión de ayudas a los armadores de buques pesqueros españoles afectados por la paralización temporal de la actividad pesquera en el periodo de programación del fondo europeo marítimo y de pesca. [Ministerio de Agricultura, Pesca y Alimentación - BOE 240 de 4/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>239</OJ_Number>
+            <OJ_Page from="96384" to="96414"/>
+            <date_of_pub day="03" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-13440"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/03/pdfs/BOE-A-2018-13440.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden ECE/1016/2018, de 28 de septiembre, por la que se establecen las bases reguladoras de la concesión de subvenciones a proyectos piloto de tecnología 5G. [Ministerio de Economía y Empresa - BOE 239 de 3/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>237</OJ_Number>
+            <OJ_Page from="94915" to="94930"/>
+            <date_of_pub day="01" month="10" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-13306"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/10/01/pdfs/BOE-A-2018-13306.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden INT/1005/2018, de 20 de septiembre, por la que se aprueban las bases reguladoras para la concesión de subvenciones a entidades locales adscritas a los Planes de Emergencia Nuclear. [Ministerio del Interior - BOE 237 de 1/10/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>232</OJ_Number>
+            <OJ_Page from="92072" to="92115"/>
+            <date_of_pub day="25" month="09" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-12939"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/09/25/pdfs/BOE-A-2018-12939.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden PCI/978/2018, de 20 de septiembre, por la que se regulan los currículos de la enseñanza de formación para la incorporación a la Escala de Oficiales del Cuerpo de la Guardia Civil mediante las formas de ingreso por acceso directo sin titulación universitaria y por promoción profesional; se dictan las normas de evaluación, y de progreso y permanencia en el centro docente de formación; y se regulan las titulaciones que permiten el ingreso. [Ministerio de la Presidencia, Relaciones con las Cortes e Igualdad - BOE 232 de 25/9/2018]</title>
+        </content>
+      </document>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number"/>
+          <pub_source>
+            <OJ_Name>BOE</OJ_Name>
+            <OJ_Number>227</OJ_Number>
+            <OJ_Page from="90811" to="90816"/>
+            <date_of_pub day="19" month="09" year="2018"/>
+          </pub_source>
+        </metadata>
+        <references>
+          <extern-url display="HTML" format="text/html" href="http://www.boe.es/buscar/doc.php?id=BOE-A-2018-12736"/>
+          <extern-url display="PDF" format="application/pdf" href="http://www.boe.es/boe/dias/2018/09/19/pdfs/BOE-A-2018-12736.pdf"/>
+        </references>
+        <content lang="es-ES">
+          <title roles="title">Orden SCB/960/2018, de 10 de septiembre, por la que se establecen las bases reguladoras para la concesión de los Premios Nacionales de Juventud. [Ministerio de Sanidad, Consumo y Bienestar Social - BOE 227 de 19/9/2018]</title>
+        </content>
+      </document>
+    </documents>
+  </result-list>
+</result>

@@ -1,0 +1,142 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:nlex="http://n-lex.europa.eu/">
+  <xsd:redefine
+    schemaLocation="http://n-lex.europa.eu/xml/schema/query/nlex-query.xsd"
+    xmlns:opsi="http://opsi.gov.uk/">
+    <!-- 1.1. Unactivate OR booleans, non available on OPSI -->
+    <xsd:group name="boolean">
+      <xsd:choice>
+        <xsd:element name="and" type="binary_op" />
+      </xsd:choice>
+    </xsd:group>
+    <xsd:complexType name="binary_op">
+      <xsd:complexContent>
+        <xsd:restriction base="binary_op">
+          <xsd:sequence>
+            <xsd:group ref="field" minOccurs="0"
+              maxOccurs="unbounded" />
+          </xsd:sequence>
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    <!-- 1.2. Indicates that this connector answers in HTML -->
+    <xsd:simpleType name="outputFormat">
+      <xsd:restriction base="outputFormat">
+        <xsd:enumeration value="xsd:int" /> <!-- number of documents -->
+        <xsd:enumeration value="original" /> <!-- only for local connectors: original output -->
+        <xsd:enumeration value="original-filtered" /> <!-- only for local connectors: original output, filtered -->
+        <xsd:enumeration
+          value="http://www.w3.org/TR/REC-html40 html" /> <!-- complete html -->
+        <xsd:enumeration
+          value="http://www.w3.org/TR/REC-html40 body" /> <!-- only part -->
+      </xsd:restriction>
+    </xsd:simpleType>
+    <!-- 2.1. Word indexes -->
+    <!-- declare the language of the database -->
+    <xsd:simpleType name="locale_lang">
+      <xsd:restriction base="locale_lang">
+        <xsd:enumeration value="en-UK" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:group name="boolean-words">
+      <xsd:choice>
+        <!-- no boolean words: only contains -->
+        <xsd:element name="contains" type="xsd:string" />
+      </xsd:choice>
+    </xsd:group>
+    <xsd:simpleType name="wordsIndexName">
+      <xsd:restriction base="wordsIndexName">
+        <!-- only fulltext, no title -->
+        <xsd:pattern value="nlex:fulltext" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <!-- 2.4. Date type indexes -->
+    <xsd:simpleType name="dateIndexName">
+      <xsd:restriction base="dateIndexName">
+        <!-- Only date of document, no date of pub nor publication -->
+        <xsd:pattern value="nlex:date-of-doc" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="single_date" mixed="true">
+      <xsd:restriction base="single_date">
+        <xsd:attribute name="year" type="single_year"
+          use="required" />
+        <!-- only year, no month, no day -->
+      </xsd:restriction>
+    </xsd:complexType>
+    <xsd:simpleType name="single_year">
+      <xsd:restriction base="single_year">
+        <!-- years from 1975 to undefined -->
+        <xsd:minInclusive value="1975" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <!-- 2.5. Other types -->
+    <xsd:simpleType name="docTypeIndexName">
+      <xsd:restriction base="docTypeIndexName">
+        <!-- Indexes existant dans N-Lex -->
+        <xsd:pattern value="nlex:doc_type"
+          nlex:type="doc_type" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="sectionIndexName">
+      <xsd:restriction base="xsd:QName">
+        <xsd:pattern value="nlex:section-article"
+          nlex:type="section" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="doc_type">
+      <xsd:restriction base="doc_type">
+        <xsd:enumeration value="" />
+        <xsd:enumeration value="A" nlex:display="Acts " />
+        <xsd:enumeration value="ALo"
+          nlex:display="Local Acts " />
+        <xsd:enumeration value="AEN"
+          nlex:display="Explanatory Notes " />
+        <xsd:enumeration value="SI"
+          nlex:display="Statutory Instruments " />
+        <xsd:enumeration value="SID"
+          nlex:display="Draft Statutory Instruments " />
+        <xsd:enumeration value="CM"
+          nlex:display="Church Measures " />
+        <xsd:enumeration value="SR"
+          nlex:display="Statutory Rules " />
+        <xsd:enumeration value="SRD"
+          nlex:display="Draft Statutory Rules " />
+        <xsd:enumeration value="US"
+          nlex:display="Updated Statutes of Northern Ireland" />
+        <xsd:enumeration value="CH"
+          nlex:display="Chronological Tables" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <!-- scope of the law: all the country or regional law -->
+    <xsd:simpleType name="section">
+      <xsd:restriction base="section">
+        <xsd:enumeration value="" />
+        <xsd:enumeration value="u"
+          nlex:display="United Kingdom" />
+        <xsd:enumeration value="s"
+          nlex:display="Scotland" />
+        <xsd:enumeration value="ni"
+          nlex:display="Northern Ireland" />
+        <xsd:enumeration value="w" nlex:display="Wales" />
+      </xsd:restriction>
+    </xsd:simpleType>
+    <!-- Unactivate non-used types -->
+    <xsd:simpleType name="stringIndexName">
+      <xsd:restriction base="stringIndexName" />
+    </xsd:simpleType>
+    <xsd:simpleType name="intIndexName">
+      <xsd:restriction base="intIndexName" />
+    </xsd:simpleType>
+    <xsd:simpleType name="docNumberIndexName">
+      <xsd:restriction base="docNumberIndexName" />
+    </xsd:simpleType>
+    <xsd:simpleType name="OJNameIndexName">
+      <xsd:restriction base="OJNameIndexName" />
+    </xsd:simpleType>
+    <xsd:simpleType name="OJNumberIndexName">
+      <xsd:restriction base="OJNumberIndexName" />
+    </xsd:simpleType>
+  </xsd:redefine>
+</xsd:schema>

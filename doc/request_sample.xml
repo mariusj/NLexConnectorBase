@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request lang="en-UK">
+  <navigation>
+    <page number="1" />
+  </navigation>
+  <criteria encoding="utf8">
+    <and>
+      <words idx-name="nlex:fulltext" lang="en-UK">
+        <!-- in the N-Lex form there can be booleans -->
+        <and>
+          <or>
+            <contains>Sample expression</contains>
+            <contains>Another expression</contains>
+            <contains>word</contains>
+          </or>
+          <!-- either one of the 3 previous, or the 4th -->
+          <contains>something else</contains>
+        </and>
+      </words>
+      <words idx-name="nlex:title" lang="en-UK">
+        <!-- booleans are supported but N-Lex don't use them -->
+        <contains>words in the title</contains>
+      </words>
+      <string.value idx-name="nlex:doc_type">LAW</string.value>
+      <!-- type docNumber is to give you the ability to describe your nomenclature -->
+      <string.value idx-name="nlex:doc_number">10/2003</string.value>
+      <date idx-name="nlex:date-of-doc" compare="ge" year="2001"
+        month="01" day="03" />
+      <date idx-name="nlex:date-of-doc" compare="le" year="2003"
+        month="04" day="13" />
+      <section.value idx-name="nlex:section-article">1</section.value>
+      <string.value idx-name="nlex:OJ_Name">A</string.value>
+      <string.value idx-name="nlex:OJ_Number">A</string.value>
+      <date idx-name="nlex:date-of-pub" compare="ge" year="2001"
+        month="01" day="03" />
+      <date idx-name="nlex:date-of-pub" compare="le" year="2003"
+        month="04" day="13" />
+      <!-- validity is only a single field, not an interval -->
+      <date idx-name="nlex:validity-date" compare="eq" year="2007"
+        month="09" day="04" />
+    </and>
+  </criteria>
+</request>

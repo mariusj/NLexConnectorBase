@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<result status="OK" site="http://your-site.com/"
+  connector="http://your-site.com/myConnector.php">
+  <result-list>
+    <navigation>
+      <!-- request-id: your session number -->
+      <request-id>3-3948-493</request-id>
+      <!-- page size: typical value: 10, 20, 50, 100... -->
+      <page number="1" size="10" />
+      <hits>928</hits> <!-- number of results -->
+    </navigation>
+    <documents>
+      <document>
+        <metadata>
+          <doc_number role="nlex:doc_number">26019</doc_number>
+          <pub_source>
+            <OJ_Number>3/2004</OJ_Number>
+            <date_of_pub day="06" month="07" year="2001" />
+          </pub_source>
+        </metadata>
+        <references>
+          <nlex-url display="HTML N-Lex" method="visuDoc"
+            param-method="soap"
+            format="http://n-lex.europa.eu/xml/schema/result/document.xsd">
+            <param name="id" value="26019" />
+          </nlex-url>
+          <extern-url format="text/html"
+            display="HTML extern"
+            href="http://your-site.com/documents/document_26019.html" />
+        </references>
+        <content lang="en-EN">
+          <title roles="title">This document</title>
+        </content>
+      </document>
+      ... 19 more documents ...
+    </documents>
+  </result-list>
+</request>
