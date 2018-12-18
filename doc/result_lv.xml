@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result status="OK" site="https://www.lv.lv/" connector="https://www.lv.lv/lv.php">
+  <result-list>
+      <navigation>
+          <hits>4814</hits>
+          <page number="1" size="20" />
+      </navigation>
+      <documents>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">283870</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="27" month="07" year="2016" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="283870" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par kultūras finansiālo atbalstu Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">277535</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="30" month="10" year="2015" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="277535" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par nekustamā īpašuma nodokli un nekustamā īpašuma nodokļa atvieglojumu piemērošanu Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">271889</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="27" month="01" year="2015" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="271889" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Kārtība, kādā pašvaldība piešķir finansējumu valsts pārvaldes uzdevumu veikšanai</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">268530</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="27" month="08" year="2014" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="268530" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par līdzfinansējuma samaksas kārtību profesionālās ievirzes izglītības programmu ieguvei Carnikavas mūzikas un mākslas skolā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">267371</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="03" month="07" year="2014" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="267371" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par materiālo atbalstu Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">266022</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="28" month="04" year="2014" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="266022" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par sociālās palīdzības pabalstiem Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">263720</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="20" month="12" year="2013" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="263720" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par Carnikavas novada iedzīvotāju sporta finansiālo atbalstu un naudas balvām</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">262407</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="11" month="11" year="2013" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="262407" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par reklāmas materiālu izvietošanu publiskās vietās vai vietās, kas vērstas pret publisku vietu Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">254928</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="11" month="01" year="2013" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="254928" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par koku ciršanu ārpus meža Carnikavas novada administratīvajā teritorijā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">253835</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Carnikava</OJ_Number>
+                      <date_of_pub day="14" month="12" year="2012" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="253835" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Par pakalpojuma "Aprūpe mājās" nodrošināšanu Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251388</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="05" month="11" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251388" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Carnikavas novada pašvaldības palīdzības energoefektivitātes pasākumu veikšanai daudzdzīvokļu dzīvojamā mājā piešķiršanas kārtības saistošie noteikumi</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251317</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="07" month="06" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251317" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par pašvaldības aģentūras "Carnikavas Komunālserviss" maksas pakalpojumiem un to cenrādi</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251113</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="31" month="05" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251113" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Carnikavas novada sabiedriskās kārtības saistošie noteikumi</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251325</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="31" month="05" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251325" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Ielu tirdzniecības saskaņošanas un organizēšanas saistošie noteikumi</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251326</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="31" month="05" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251326" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par Carnikavas novada pašvaldības nodevām</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251316</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="05" month="05" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251316" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Carnikavas kapsētas uzturēšanas saistošie noteikumi</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251312</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="28" month="02" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251312" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par pašvaldības aģentūras "Carnikavas Komunālserviss" sniegtiem maksas pakalpojumiem ūdensapgādē, notekūdeņu novadīšanā un attīrīšanā Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251314</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="28" month="02" year="2011" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251314" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par neapbūvēta Carnikavas novada pašvaldības zemesgabala nomas maksas apmēru</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251130</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="29" month="11" year="2010" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251130" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par pašvaldības aģentūras "Carnikavas Komunālserviss" sniegtiem maksas pakalpojumiem siltumenerģijas apgādē un ūdensapgādē Carnikavas novadā</title>
+              </content>
+        </document>
+        <document>
+              <metadata>
+                  <doc_number role = "nlex:doc_number">251122</doc_number>
+                  <pub_source>
+                      <OJ_Number>Latvijas Vēstnesis Apkārtraksts</OJ_Number>
+                      <date_of_pub day="30" month="07" year="2010" />
+                  </pub_source>
+              </metadata>
+              <references>
+                  <nlex-url method="visuDoc" param-method="soap" format="http://n-lex.europa.eu/xml/schema/document.xsd">
+                      <param name="id" value="251122" />
+                  </nlex-url>
+              </references>
+              <content lang="lv-LV">
+                  <title roles="title">Saistošie noteikumi par izglītojamo braukšanas maksas atvieglojumiem un biļešu saņemšanas kārtību Carnikavas novadā</title>
+              </content>
+        </document>
+      </documents>
+  </result-list>
+</result>
