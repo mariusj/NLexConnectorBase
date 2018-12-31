@@ -1,6 +1,7 @@
 package eu.europa.eurlex.nlex;
 
 import eu.europa.eurlex.nlex.query.Comparator;
+import eu.europa.eurlex.nlex.query.FTSearchWords;
 import eu.europa.eurlex.nlex.query.Index;
 import eu.europa.eurlex.nlex.query.StringComparator;
 
@@ -44,12 +45,8 @@ public interface QueryBuilder {
     /**
      * Filter an index using full-text search.
      * @param indexName a name of the index to filter by
-     * @param withWord a word that have to be in the index
-     * @param orWord1 one of the words that can be in the index
-     * @param orWord2 one of the words that can be in the index
-     * @param orWord3 one of the words that can be in the index
+     * @param words a tree of operands and words
      */
-    void filterWords(Index indexName, String withWord, String orWord1, 
-            String orWord2, String orWord3);
+    void filterWords(Index indexName, FTSearchWords words);
     
 }
