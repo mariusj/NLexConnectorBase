@@ -15,6 +15,18 @@ import eu.europa.eurlex.nlex.query.StringComparator;
  *
  */
 public interface QueryBuilder {
+    
+    /**
+     * Sets the page of results that should be returned.
+     * @param page a page number
+     */
+    void setPage(int page);
+    
+    /**
+     * Sets a request id.
+     * @param requestID
+     */
+    void setRequestID(String requestID);
 
     /**
      * Filters an index by date value.
