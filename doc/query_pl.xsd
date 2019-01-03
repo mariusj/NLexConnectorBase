@@ -1,0 +1,117 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:redefine schemaLocation="nlex-query.xsd">
+
+    <!-- declare the language of the database -->
+    <xsd:simpleType name="locale_lang">
+      <xsd:restriction base="locale_lang">
+        <xsd:enumeration value="pl-PL" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- disable full text search -->
+    <xsd:simpleType name="wordsIndexName">
+      <xsd:restriction base="wordsIndexName">
+        <xsd:pattern value="nlex:title" />
+        <!-- <xsd:pattern value="nlex:text" />  -->
+        <!-- <xsd:pattern value="nlex:abstract" />  -->
+        <!-- <xsd:pattern value="nlex:fulltext" />  -->
+      </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- disable validity date -->  
+    <xsd:simpleType name="dateIndexName">
+      <xsd:restriction base="dateIndexName">
+        <!-- N-Lex available indexes -->
+        <xsd:pattern value="nlex:date-of-doc" />
+        <xsd:pattern value="nlex:date-of-pub" />
+        <!-- <xsd:pattern value="nlex:validity-date" /> -->
+      </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- years from 1918 to undefined -->
+    <xsd:simpleType name="single_year">
+      <xsd:restriction base="single_year">
+        <xsd:minInclusive value="1918" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- a drop-down list for legal document types -->
+    <xsd:simpleType name="doc_type"
+      xmlns:nlex="http://n-lex.europa.eu/">
+      <xsd:restriction base="doc_type">
+        <xsd:enumeration value="" />
+        <xsd:enumeration value="Akt" nlex:display="Akt" />
+<xsd:enumeration value="Apel" nlex:display="Apel" />
+<xsd:enumeration value="Decyzja" nlex:display="Decyzja" />
+<xsd:enumeration value="Dekret" nlex:display="Dekret" />
+<xsd:enumeration value="Deklaracja" nlex:display="Deklaracja" />
+<xsd:enumeration value="Dokument wypowiedzenia" nlex:display="Dokument wypowiedzenia" />
+<xsd:enumeration value="Informacja" nlex:display="Informacja" />
+<xsd:enumeration value="Instrukcja" nlex:display="Instrukcja" />
+<xsd:enumeration value="Interpretacja" nlex:display="Interpretacja" />
+<xsd:enumeration value="Karta" nlex:display="Karta" />
+<xsd:enumeration value="Komunikat" nlex:display="Komunikat" />
+<xsd:enumeration value="Konwencja" nlex:display="Konwencja" />
+<xsd:enumeration value="Lista" nlex:display="Lista" />
+<xsd:enumeration value="Obwieszczenie" nlex:display="Obwieszczenie" />
+<xsd:enumeration value="Ogłoszenie" nlex:display="Ogłoszenie" />
+<xsd:enumeration value="Okólnik" nlex:display="Okólnik" />
+<xsd:enumeration value="Orędzie" nlex:display="Orędzie" />
+<xsd:enumeration value="Orzeczenie" nlex:display="Orzeczenie" />
+<xsd:enumeration value="Oświadczenie rządowe" nlex:display="Oświadczenie rządowe" />
+<xsd:enumeration value="Oświadczenie" nlex:display="Oświadczenie" />
+<xsd:enumeration value="Pismo okólne" nlex:display="Pismo okólne" />
+<xsd:enumeration value="Porozumienie" nlex:display="Porozumienie" />
+<xsd:enumeration value="Postanowienie" nlex:display="Postanowienie" />
+<xsd:enumeration value="Protokół" nlex:display="Protokół" />
+<xsd:enumeration value="Przepisy" nlex:display="Przepisy" />
+<xsd:enumeration value="Przepisy wykonawcze" nlex:display="Przepisy wykonawcze" />
+<xsd:enumeration value="Raport" nlex:display="Raport" />
+<xsd:enumeration value="Regulamin" nlex:display="Regulamin" />
+<xsd:enumeration value="Reskrypt" nlex:display="Reskrypt" />
+<xsd:enumeration value="Rezolucja" nlex:display="Rezolucja" />
+<xsd:enumeration value="Rozkaz" nlex:display="Rozkaz" />
+<xsd:enumeration value="Rozporządzenie" nlex:display="Rozporządzenie" />
+<xsd:enumeration value="Sprostowanie" nlex:display="Sprostowanie" />
+<xsd:enumeration value="Sprawozdanie" nlex:display="Sprawozdanie" />
+<xsd:enumeration value="Stanowisko" nlex:display="Stanowisko" />
+<xsd:enumeration value="Statut" nlex:display="Statut" />
+<xsd:enumeration value="Traktat" nlex:display="Traktat" />
+<xsd:enumeration value="Uchwała" nlex:display="Uchwała" />
+<xsd:enumeration value="Układ" nlex:display="Układ" />
+<xsd:enumeration value="Umowa" nlex:display="Umowa" />
+<xsd:enumeration value="Umowa międzynarodowa" nlex:display="Umowa międzynarodowa" />
+<xsd:enumeration value="Umowa zbiorowa" nlex:display="Umowa zbiorowa" />
+<xsd:enumeration value="Ustawa" nlex:display="Ustawa" />
+<xsd:enumeration value="Wyjaśnienie" nlex:display="Wyjaśnienie" />
+<xsd:enumeration value="Wykaz" nlex:display="Wykaz" />
+<xsd:enumeration value="Wypis" nlex:display="Wypis" />
+<xsd:enumeration value="Wytyczne" nlex:display="Wytyczne" />
+<xsd:enumeration value="Zalecenie" nlex:display="Zalecenie" />
+<xsd:enumeration value="Zarządzenie" nlex:display="Zarządzenie" />
+<xsd:enumeration value="Zawiadomienie" nlex:display="Zawiadomienie" />
+
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- a drop-down list for official journals -->
+    <xsd:simpleType name="OJ_Name" xmlns:nlex="http://n-lex.europa.eu/">
+      <xsd:restriction base="OJ_Name">
+      <xsd:enumeration value="Dziennik Ustaw" nlex:display="Dziennik Ustaw" />
+      <xsd:enumeration value="Monitor Polski" nlex:display="Monitor Polski" />
+      </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <!-- removing the section of the legal document (we don't use sections 
+      in our search engine) -->
+    <xsd:simpleType name="sectionIndexName">
+      <xsd:restriction base="xsd:QName">
+        <!-- <xsd:pattern value="nlex:section-article" /> -->
+      </xsd:restriction>
+    </xsd:simpleType>
+
+
+  </xsd:redefine>
+  <!-- local definitions here -->
+</xsd:schema>
