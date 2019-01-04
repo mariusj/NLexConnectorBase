@@ -20,11 +20,24 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import eu.europa.eurlex.nlex.query.Content;
+import eu.europa.eurlex.nlex.query.DocNumber;
+import eu.europa.eurlex.nlex.query.DocType;
+import eu.europa.eurlex.nlex.query.DocumentSpecification;
+import eu.europa.eurlex.nlex.query.ExternUrl;
+import eu.europa.eurlex.nlex.query.Metadata;
+import eu.europa.eurlex.nlex.query.Metadata.DateOfDoc;
+import eu.europa.eurlex.nlex.query.Metadata.PubSource;
 import eu.europa.eurlex.nlex.query.Navigation.Page;
 import eu.europa.eurlex.nlex.query.NlexDate;
+import eu.europa.eurlex.nlex.query.OJName;
+import eu.europa.eurlex.nlex.query.OJNumber;
+import eu.europa.eurlex.nlex.query.ParagraphRole;
+import eu.europa.eurlex.nlex.query.References;
 import eu.europa.eurlex.nlex.query.Request;
 import eu.europa.eurlex.nlex.query.Result;
 import eu.europa.eurlex.nlex.query.ResultList.Navigation;
+import eu.europa.eurlex.nlex.query.Title;
 
 /**
  * A base class for SOAP connector. 
@@ -128,6 +141,74 @@ public abstract class AbstractConnector {
         page.setSize(size);
         nav.setPage(page);
         return nav;
+    }
+
+    /**
+     * Creates a XML representation of a document 
+     * that will be returned in result list.
+     * @param doc
+     * @return
+     */
+    protected DocumentSpecification createDoc(Document doc) {
+        DocumentSpecification docSpec = new DocumentSpecification();
+        
+        Metadata meta = new Metadata();       
+        docSpec.setMetadata(meta);
+        
+        DocNumber num = new DocNumber();
+        num.setRole("nlex:doc_number");
+        num.setContent(doc.getNumber());
+        meta.getDocNumber().add(num);
+        
+        if (doc.getType() != null) {
+            DocType type = new DocType();
+            type.setValue(doc.getType());
+            meta.getDocType().add(type);
+        }
+        
+        if (doc.getDocDate() != null) { 
+            DateOfDoc dateDoc = new DateOfDoc();
+            fillDate(dateDoc, doc.getDocDate());
+            meta.setDateOfDoc(dateDoc);
+        }
+    
+        PubSource pub = new PubSource();
+        if (doc.getOJName() != null) {
+            OJName oj = new OJName();
+            oj.setValue(doc.getOJName());
+            pub.setOJName(oj);
+        }
+        if (doc.getDateOfPub() != null) {
+            OJNumber ojn = new OJNumber();
+            ojn.setContent(doc.getOJNumber());
+            pub.setOJNumber(ojn);
+        }
+        if (doc.getDateOfPub() != null) {
+            NlexDate datePub = new NlexDate(); 
+            fillDate(datePub, doc.getDateOfPub());
+            pub.setDateOfPub(datePub);
+            meta.getPubSource().add(pub);
+        }
+        
+        References refs = new References();
+        docSpec.setReferences(refs);
+        
+        for (Reference ref : doc.getReferences()) {
+            ExternUrl url = new ExternUrl();
+            url.setDisplay(ref.getDisplay());
+            url.setFormat(ref.getFormat());
+            url.setHref(ref.getHRef());
+            refs.getExternUrl().add(url);
+        }
+        
+        Content content = new Content();
+        docSpec.setContent(content);
+        content.setLang(doc.getTitleLang());
+        Title title = new Title();
+        title.getRoles().add(ParagraphRole.TITLE);
+        title.getContent().add(doc.getTitle());
+        content.getContent().add(title);
+        return docSpec;
     }
     
 }
