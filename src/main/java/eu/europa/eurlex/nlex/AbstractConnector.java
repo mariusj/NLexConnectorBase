@@ -46,6 +46,8 @@ import eu.europa.eurlex.nlex.query.Title;
  */
 public abstract class AbstractConnector {
 
+    protected static final String NLEX_NS = "xmlns:nlex=\"http://n-lex.europa.eu/xml/schemas/query/legislation/\"";
+
     /**
      * Reads a file from jar and returns its content as string.
      * @param fileName a name of the file
@@ -66,12 +68,33 @@ public abstract class AbstractConnector {
     }
 
     /**
+     * Checks if request XML contains namespace declaration for 
+     * <code>nlex</code> prefix.
+     * If it doesn't it inserts it. The namespace declaration is required
+     * for proper unmarshalling.
+     * @param query a request with XML string
+     * @return a XML string containing <code>nlex</code> prefix declaration 
+     */
+    protected String insertNamespace(String query) {
+        if (!query.contains(NLEX_NS)) {
+            int idx = query.indexOf("<request");
+            if (idx != -1) {
+                query = query.substring(0, idx + 8) 
+                        + " " + NLEX_NS + " " 
+                        + query.substring(idx + 8);
+            }
+        }
+        return query;
+    }
+
+    /**
      * Parses query string as XML and returns {@link Request} object.
      * @param query a request string to parse
      * @return a request object
      */
     protected eu.europa.eurlex.nlex.query.Request unmarshallRequest(String query) {
         try {
+            query = insertNamespace(query);
             JAXBContext ctx = JAXBContext.newInstance(eu.europa.eurlex.nlex.query.Request.class);
             Unmarshaller jaxbUnmarshaller = ctx.createUnmarshaller();
             StringReader r = new StringReader(query);
