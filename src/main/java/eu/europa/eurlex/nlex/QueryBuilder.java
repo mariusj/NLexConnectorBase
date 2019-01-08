@@ -23,6 +23,12 @@ public interface QueryBuilder {
     void setPage(int page);
     
     /**
+     * Returns the page number of the returned results.
+     * @return
+     */
+    int getPage();
+    
+    /**
      * Sets a request id.
      * @param requestID
      */
