@@ -38,6 +38,8 @@ import eu.europa.eurlex.nlex.query.ParagraphRole;
 import eu.europa.eurlex.nlex.query.References;
 import eu.europa.eurlex.nlex.query.Request;
 import eu.europa.eurlex.nlex.query.Result;
+import eu.europa.eurlex.nlex.query.ResultList;
+import eu.europa.eurlex.nlex.query.ResultList.Documents;
 import eu.europa.eurlex.nlex.query.ResultList.Navigation;
 import eu.europa.eurlex.nlex.query.Title;
 
@@ -279,6 +281,43 @@ public abstract class AbstractConnector {
         Error error = new Error();
         error.setContent(errorMessage);
         errors.getError().add(error);
+    }
+
+    /**
+     * Creates a container for documents in Result object.
+     * @param result a Result object
+     * @param docCount a total number of documents that match the criteria
+     * @param pageSize a number of items per page
+     * @param builder a builder with query
+     * @return a container for documents
+     */
+    protected Documents createDocuments(eu.europa.eurlex.nlex.query.Result result, int docCount, int pageSize, QueryBuilder builder) {
+        result.setStatus("OK");
+        ResultList results = new ResultList();
+        result.setResultList(results);
+        Navigation nav = createNav(null, docCount, pageSize, builder.getPage());
+        results.setNavigation(nav);
+        Documents docs = new Documents();
+        results.setDocuments(docs);
+        return docs;
+    }
+
+    /**
+     * Parses the query and builds a query object via {@link QueryBuilder}.
+     * @param query a query to parse
+     * @param builder a builder used to create query object
+     * @return true if query was parsed correctly, false otherwise
+     */
+    protected boolean parseQuery(String query, QueryBuilder builder) {
+        try {
+            eu.europa.eurlex.nlex.query.Request request = unmarshallRequest(query);
+            QueryParser parser = new QueryParser(builder, request);
+            parser.parse();
+            return true;
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        return false;
     }
     
 }

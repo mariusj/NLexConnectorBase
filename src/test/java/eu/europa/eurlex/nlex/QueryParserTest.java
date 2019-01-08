@@ -72,6 +72,11 @@ public class QueryParserTest {
             return query.length() > 0 ? query.substring(5) : query;
         }
 
+        @Override
+        public int getPage() {
+            return 0;
+        }
+
     }
 
     @Test
