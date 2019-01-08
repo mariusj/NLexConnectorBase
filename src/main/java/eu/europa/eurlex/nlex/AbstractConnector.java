@@ -24,6 +24,8 @@ import eu.europa.eurlex.nlex.query.Content;
 import eu.europa.eurlex.nlex.query.DocNumber;
 import eu.europa.eurlex.nlex.query.DocType;
 import eu.europa.eurlex.nlex.query.DocumentSpecification;
+import eu.europa.eurlex.nlex.query.Error;
+import eu.europa.eurlex.nlex.query.Errors;
 import eu.europa.eurlex.nlex.query.ExternUrl;
 import eu.europa.eurlex.nlex.query.Metadata;
 import eu.europa.eurlex.nlex.query.Metadata.DateOfDoc;
@@ -232,6 +234,51 @@ public abstract class AbstractConnector {
         title.getContent().add(doc.getTitle());
         content.getContent().add(title);
         return docSpec;
+    }
+
+    /**
+     * Creates a Result object.
+     * @param siteUrl the URL of the site with legal acts
+     * @param connectorUrl the URL of the connector
+     * @return the Result object
+     */
+    protected eu.europa.eurlex.nlex.query.Result createResult(String siteUrl, String connectorUrl) {
+        eu.europa.eurlex.nlex.query.Result result = new eu.europa.eurlex.nlex.query.Result();
+        result.setSite(siteUrl);
+        result.setConnector(connectorUrl);
+        return result;
+    }
+
+    /**
+     * Adds an error to the result object.
+     * @param result a Result object
+     * @param errorCode an error code
+     */
+    protected void addError(eu.europa.eurlex.nlex.query.Result result, ErrorCode errorCode) {
+        result.setStatus("error");
+        if (result.getErrors() == null) {
+            result.setErrors(new Errors());
+        }
+        Errors errors = result.getErrors();
+        Error error = new Error();
+        error.setCause(BigInteger.valueOf(errorCode.ordinal()));
+        errors.getError().add(error);
+    }
+    
+    /**
+     * Adds a new error message to the Result object.
+     * @param result a Result object
+     * @param errorMessage an error message
+     */
+    protected void addError(eu.europa.eurlex.nlex.query.Result result, String errorMessage) {
+        result.setStatus("error");
+        if (result.getErrors() == null) {
+            result.setErrors(new Errors());
+        }
+        Errors errors = result.getErrors();
+        Error error = new Error();
+        error.setContent(errorMessage);
+        errors.getError().add(error);
     }
     
 }
