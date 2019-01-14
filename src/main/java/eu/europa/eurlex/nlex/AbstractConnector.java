@@ -149,11 +149,11 @@ public abstract class AbstractConnector {
     }
 
     /**
-     * Creates a navigation part of result.
+     * Creates a navigation part of a result.
      * @param requestId a request id, can be null
-     * @param hits a number of documents in result
+     * @param hits a total number of documents found
      * @param pageSize the number of documents on one page 
-     * @param pageNum current page number
+     * @param pageNum the current page number
      * @return a Navigation structure
      */
     protected Navigation createNav(String requestId, int hits, int pageSize, int pageNum) {
@@ -286,16 +286,16 @@ public abstract class AbstractConnector {
     /**
      * Creates a container for documents in Result object.
      * @param result a Result object
-     * @param docCount a total number of documents that match the criteria
+     * @param hits a total number of documents that match the criteria
      * @param pageSize a number of items per page
-     * @param builder a builder with query
+     * @param builder a builder with a query
      * @return a container for documents
      */
-    protected Documents createDocuments(eu.europa.eurlex.nlex.query.Result result, int docCount, int pageSize, QueryBuilder builder) {
+    protected Documents createDocuments(eu.europa.eurlex.nlex.query.Result result, int hits, int pageSize, QueryBuilder builder) {
         result.setStatus("OK");
         ResultList results = new ResultList();
         result.setResultList(results);
-        Navigation nav = createNav(null, docCount, pageSize, builder.getPage());
+        Navigation nav = createNav(null, hits, pageSize, builder.getPage());
         results.setNavigation(nav);
         Documents docs = new Documents();
         results.setDocuments(docs);
