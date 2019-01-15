@@ -97,5 +97,25 @@ public class AbstractConnectorTest extends AbstractConnector {
         String file = readFile("xsd/types.xsd");
         assertNotNull(file);
     }
+
+    @Override
+    public String version() {
+        return null;
+    }
+
+    @Override
+    public String testQuery(String type) {
+        return null;
+    }
+
+    @Override
+    public String request(String query) {
+        return null;
+    }
+
+    @Override
+    public String aboutConnector(String type) {
+        return null;
+    }
     
 }
