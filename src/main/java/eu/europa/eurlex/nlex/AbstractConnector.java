@@ -291,14 +291,14 @@ public abstract class AbstractConnector {
      * @param result a Result object
      * @param hits a total number of documents that match the criteria
      * @param pageSize a number of items per page
-     * @param builder a builder with a query
+     * @param pageNum the current page number (can be read from {@link QueryBuilder#getPage()})
      * @return a container for documents
      */
-    protected Documents createDocuments(eu.europa.eurlex.nlex.query.Result result, int hits, int pageSize, QueryBuilder builder) {
+    protected Documents createDocuments(eu.europa.eurlex.nlex.query.Result result, int hits, int pageSize, int pageNum) {
         result.setStatus("OK");
         ResultList results = new ResultList();
         result.setResultList(results);
-        Navigation nav = createNav(null, hits, pageSize, builder.getPage());
+        Navigation nav = createNav(null, hits, pageSize, pageNum);
         results.setNavigation(nav);
         Documents docs = new Documents();
         results.setDocuments(docs);
@@ -324,6 +324,24 @@ public abstract class AbstractConnector {
     }
 
     /**
+     * Adds documents to a document container. This method iterates over results 
+     * and for each document it converts the {@link Document} interface 
+     * to the {@link DocumentSpecification} object 
+     * and adds this object to the {@link Documents} list.
+     * @param foundDocs an iterator with result list
+     * @param docs a document container
+     */
+    protected void addDocuments(Documents docs, QueryResult foundDocs) {
+        while (foundDocs.hasNext()) {
+            Document doc = foundDocs.next();
+            DocumentSpecification docSpec = createDoc(doc);
+            docs.getDocument().add(docSpec);
+        }
+    }
+    
+    
+
+    /**
      * Returns the version of the connector.
      * @return a version of the connector
      */
@@ -346,7 +364,7 @@ public abstract class AbstractConnector {
      *  <li>create Result object ({@link #createResult(String, String)}) 
      *  <li>parse a query (you may use {@link #parseQuery(String, QueryBuilder)} method)
      *  <li>get result list (execute a query)
-     *  <li>create documents list ({@link #createDocuments(Result, int, int, QueryBuilder)})
+     *  <li>create documents list ({@link #createDocuments(Result, int, int, int)})
      *  <li>for each document add it to a list ({@link #createDoc(Document)})
      *  <li>marshall the result to XML string ({@link #marshallResult(Result)})
      * </ul>
@@ -365,5 +383,5 @@ public abstract class AbstractConnector {
      * @return a schema for queries
      */
     public abstract String aboutConnector(String type);
-    
+
 }
