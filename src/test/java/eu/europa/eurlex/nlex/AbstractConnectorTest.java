@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.math.BigInteger;
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
@@ -17,12 +15,8 @@ import org.junit.Test;
 import eu.europa.eurlex.nlex.query.BinaryOp;
 import eu.europa.eurlex.nlex.query.ContainsType;
 import eu.europa.eurlex.nlex.query.Navigation;
-import eu.europa.eurlex.nlex.query.NlexDate;
 import eu.europa.eurlex.nlex.query.Request;
 import eu.europa.eurlex.nlex.query.Request.Criteria;
-import eu.europa.eurlex.nlex.query.Result;
-import eu.europa.eurlex.nlex.query.ResultList;
-import eu.europa.eurlex.nlex.query.ResultList.Documents;
 import eu.europa.eurlex.nlex.query.StringValue;
 import eu.europa.eurlex.nlex.query.WordsType;
 
@@ -57,32 +51,7 @@ public class AbstractConnectorTest extends AbstractConnector {
         assertEquals("orden", value);
     }
     
-    @Test
-    public void testFillDate() {
-        LocalDate date = LocalDate.of(2019, 1, 8);
-        NlexDate dateXML = new NlexDate();
-        fillDate(dateXML, date);
-        assertEquals(2019, dateXML.getYear().getYear());
-        assertEquals(BigInteger.valueOf(1), dateXML.getMonth());
-        assertEquals(BigInteger.valueOf(8), dateXML.getDay());
-    }
     
-    @Test
-    public void testMarshallResult() {
-        Result result = new Result();
-        ResultList rl = new ResultList();
-        eu.europa.eurlex.nlex.query.ResultList.Navigation nav = createNav(null, 10, 5, 1);
-        rl.setNavigation(nav);
-        Documents docs = new Documents();
-        rl.setDocuments(docs );
-        result.setResultList(rl);
-        String xml = marshallResult(result);
-        assertNotNull(xml);
-        assertThat(xml, containsString("result"));
-        assertThat(xml, containsString("result-list"));
-        assertThat(xml, containsString("navigation"));
-        assertThat(xml, containsString("documents"));
-    }
     
     @Test
     public void testInsertNamespace() {
@@ -115,6 +84,38 @@ public class AbstractConnectorTest extends AbstractConnector {
 
     @Override
     public String aboutConnector(String type) {
+        return null;
+    }
+
+    @Override
+    protected int getPageSize() {
+        return 0;
+    }
+
+    @Override
+    protected QueryBuilder getQueryBuilder() {
+        return null;
+    }
+
+
+
+    @Override
+    protected String getSiteUrl() {
+        return null;
+    }
+
+
+
+    @Override
+    protected String getConnectorUrl() {
+        return null;
+    }
+
+
+
+    @Override
+    protected QueryResult getResults(QueryBuilder builder) {
+        // TODO Auto-generated method stub
         return null;
     }
     
