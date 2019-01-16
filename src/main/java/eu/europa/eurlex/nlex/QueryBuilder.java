@@ -11,6 +11,10 @@ import eu.europa.eurlex.nlex.query.StringComparator;
  * Methods of this interface are called when parsing XML query 
  * sent by the N-Lex.
  * 
+ * You have to implement this interface to build a query for your legislative
+ * system. Once the query is parsed it can be used to filter acts by 
+ * {@link AbstractConnector#getResults(QueryBuilder)}. 
+ * 
  * @author Mariusz Jakubowski
  *
  */

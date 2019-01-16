@@ -2,6 +2,11 @@ package eu.europa.eurlex.nlex;
 
 import eu.europa.eurlex.nlex.query.Result;
 
+/**
+ * A Connector interface.
+ * @author Mariusz Jakubowski
+ *
+ */
 public interface ConnectorService {
 
     /**

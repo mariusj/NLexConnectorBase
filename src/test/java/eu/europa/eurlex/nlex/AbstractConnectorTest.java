@@ -111,11 +111,8 @@ public class AbstractConnectorTest extends AbstractConnector {
         return null;
     }
 
-
-
     @Override
     protected QueryResult getResults(QueryBuilder builder) {
-        // TODO Auto-generated method stub
         return null;
     }
     

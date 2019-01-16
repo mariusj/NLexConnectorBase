@@ -34,7 +34,12 @@ import eu.europa.eurlex.nlex.query.ResultList.Documents;
 import eu.europa.eurlex.nlex.query.ResultList.Navigation;
 import eu.europa.eurlex.nlex.query.Title;
 
-
+/**
+ * A wrapper for connector response. This class contains methods that simplify
+ * building a connector response in the XML format. 
+ * @author Mariusz Jakubowski
+ *
+ */
 public class ResultBuilder {
     
     private eu.europa.eurlex.nlex.query.Result result;

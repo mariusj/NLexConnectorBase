@@ -15,7 +15,7 @@ import javax.xml.bind.Unmarshaller;
 import eu.europa.eurlex.nlex.query.Request;
 
 /**
- * A base class for SOAP connector. 
+ * A base class for the SOAP connector. 
  * @author Mariusz Jakubowski
  *
  */

@@ -29,7 +29,8 @@ import eu.europa.eurlex.nlex.query.Request.Criteria;
 
 /**
  * Parses the request.
- * While parsing methods from {@link QueryParser} are invoked. 
+ * While parsing methods from {@link QueryParser} are invoked allowing you
+ * to create a query for your legislative system. 
  * @author Mariusz Jakubowski
  *
  */

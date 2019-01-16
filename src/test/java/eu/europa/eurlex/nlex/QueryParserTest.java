@@ -15,6 +15,11 @@ import eu.europa.eurlex.nlex.query.StringComparator;
 
 public class QueryParserTest {
 
+    /**
+     * You can construct an SQL query in similar way, but please don't use
+     * string concatenation for parameters. 
+     *
+     */
     public class TestQueryBuilder implements QueryBuilder {
         
         String query = "";
