@@ -27,13 +27,13 @@ public class InjectActionFilter extends HttpFilter {
             HeaderMapRequestWrapper wrapper = new HeaderMapRequestWrapper(req);
             String body = wrapper.getBody();
             if (body.contains("<about_connector")) {
-                wrapper.addHeader("SOAPAction", "about_connector");
+                wrapper.addHeader("SOAPAction", "#about_connector");
             } else if (body.contains("<VERSION")) {
-                wrapper.addHeader("SOAPAction", "VERSION");
+                wrapper.addHeader("SOAPAction", "#VERSION");
             } else if (body.contains("<test_query")) {
-                wrapper.addHeader("SOAPAction", "test_query");
+                wrapper.addHeader("SOAPAction", "#test_query");
             } else if (body.contains("<request")) {
-                wrapper.addHeader("SOAPAction", "request");
+                wrapper.addHeader("SOAPAction", "#request");
             }
             super.doFilter(wrapper, res, chain);
         } else {
