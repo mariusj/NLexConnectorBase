@@ -35,7 +35,7 @@ import eu.europa.eurlex.nlex.query.ResultList.Navigation;
 import eu.europa.eurlex.nlex.query.Title;
 
 /**
- * A wrapper for connector response. This class contains methods that simplify
+ * A wrapper for a connector response. This class contains methods that simplify
  * building a connector response in the XML format. 
  * @author Mariusz Jakubowski
  *
@@ -56,6 +56,10 @@ public class ResultBuilder {
         result.setConnector(connectorUrl);
     }
     
+    /**
+     * Returns the XML Result object.
+     * @return the Result object
+     */
     public eu.europa.eurlex.nlex.query.Result getResult() {
         return result;
     }
@@ -136,7 +140,7 @@ public class ResultBuilder {
      * and for each document it converts the {@link Document} interface 
      * to the {@link DocumentSpecification} object 
      * and adds this object to the {@link Documents} list.
-     * @param foundDocs an iterator with result list
+     * @param foundDocs an iterator with a result list
      */
     public void addDocuments(QueryResult foundDocs) {
         Documents docs = result.getResultList().getDocuments();
@@ -149,7 +153,7 @@ public class ResultBuilder {
     
     /**
      * Creates a XML representation of a document 
-     * that will be returned in result list.
+     * that will be returned in a result list.
      * @param doc
      * @return
      */
@@ -202,6 +206,12 @@ public class ResultBuilder {
             url.setDisplay(ref.getDisplay());
             url.setFormat(ref.getFormat());
             url.setHref(ref.getHRef());
+            if (ref.isHidden()) {
+                url.setHidden(Boolean.TRUE);
+            }
+            if (ref.getId() != null) {
+                url.setId(ref.getId());
+            }
             refs.getExternUrl().add(url);
         }
         

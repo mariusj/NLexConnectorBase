@@ -14,7 +14,7 @@ public interface Reference {
     String getDisplay();
 
     /**
-     * Returns a MIME format of a document (eg. application/pdf).
+     * Returns a MIME format of a document (e.g. application/pdf).
      * @return
      */
     String getFormat();
@@ -24,4 +24,22 @@ public interface Reference {
      * @return
      */
     String getHRef();
+    
+    /**
+     * Returns if this link is hidden.
+     * @return true if link is hidden
+     */
+    default boolean isHidden() {
+        return false;
+    }
+    
+    /**
+     * Returns optional id of the link. The id may be used in a link 
+     * from a title.
+     * @return the id of the link.
+     */
+    default String getId() {
+        return null;
+    }
+    
 }
