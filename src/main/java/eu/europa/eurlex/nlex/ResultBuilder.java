@@ -33,6 +33,7 @@ import eu.europa.eurlex.nlex.query.ResultList;
 import eu.europa.eurlex.nlex.query.ResultList.Documents;
 import eu.europa.eurlex.nlex.query.ResultList.Navigation;
 import eu.europa.eurlex.nlex.query.Title;
+import eu.europa.eurlex.nlex.query.Use;
 
 /**
  * A wrapper for a connector response. This class contains methods that simplify
@@ -201,6 +202,8 @@ public class ResultBuilder {
         References refs = new References();
         docSpec.setReferences(refs);
         
+        String titleRef = null;
+        
         for (Reference ref : doc.getReferences()) {
             ExternUrl url = new ExternUrl();
             url.setDisplay(ref.getDisplay());
@@ -213,6 +216,9 @@ public class ResultBuilder {
                 url.setId(ref.getId());
             }
             refs.getExternUrl().add(url);
+            if (ref.useInTitle() && ref.getId() != null) {
+                titleRef = ref.getId();
+            }
         }
         
         Content content = new Content();
@@ -220,7 +226,16 @@ public class ResultBuilder {
         content.setLang(doc.getTitleLang());
         Title title = new Title();
         title.getRoles().add(ParagraphRole.TITLE);
-        title.getContent().add(doc.getTitle());
+        
+        if (titleRef != null) {
+            Use link = new Use();
+            link.setContent(doc.getTitle());
+            link.setHref(titleRef);
+            title.getContent().add(link);
+        } else {
+            title.getContent().add(doc.getTitle());
+        }
+        
         content.getContent().add(title);
         return docSpec;
     }

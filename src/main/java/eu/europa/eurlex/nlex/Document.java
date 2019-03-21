@@ -23,7 +23,7 @@ public interface Document {
     String getType();
     
     /**
-     * Returns title of the document.
+     * Returns a title of the document.
      * @return
      */
     String getTitle();
@@ -47,19 +47,19 @@ public interface Document {
     String getOJName();
     
     /**
-     * Returns number where the document was published.
+     * Returns a number of the journal where the document was published.
      * @return
      */
     String getOJNumber();
     
     /**
-     * Returns date of publication.
+     * Returns a date of publication.
      * @return
      */
     LocalDate getDateOfPub();
     
     /**
-     * Returns a list of links to document representations. 
+     * Returns a list of links to a document representations. 
      * @return
      */
     List<Reference> getReferences();

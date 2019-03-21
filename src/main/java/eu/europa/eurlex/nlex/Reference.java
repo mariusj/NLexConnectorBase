@@ -8,7 +8,7 @@ package eu.europa.eurlex.nlex;
 public interface Reference {
     
     /**
-     * Returns a title of a reference.
+     * Returns a displayed type of a reference (e.g. PDF or HTML).
      * @return
      */
     String getDisplay();
@@ -20,8 +20,8 @@ public interface Reference {
     String getFormat();
     
     /**
-     * Returns a link to a reference.
-     * @return
+     * Returns a link to a source document (PDF/HTML).
+     * @return a link to an act 
      */
     String getHRef();
     
@@ -40,6 +40,14 @@ public interface Reference {
      */
     default String getId() {
         return null;
+    }
+    
+    /**
+     * Indicates if this link should be used as link in title. 
+     * @return true if link should be used in title
+     */
+    default boolean useInTitle() {
+        return false;
     }
     
 }
