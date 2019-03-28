@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -38,7 +39,7 @@ public abstract class AbstractConnector implements ConnectorService {
             URI uri = loader.getResource(fileName).toURI();
             Path path = Paths.get(uri);       
             byte[] fileBytes = Files.readAllBytes(path);
-            String xsd = new String(fileBytes, "UTF-8");
+            String xsd = new String(fileBytes, StandardCharsets.UTF_8);
             return xsd;
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
