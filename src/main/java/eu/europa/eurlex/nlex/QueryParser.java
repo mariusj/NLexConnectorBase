@@ -16,16 +16,16 @@ import eu.europa.eurlex.nlex.query.Comparator;
 import eu.europa.eurlex.nlex.query.ContainsType;
 import eu.europa.eurlex.nlex.query.DateType;
 import eu.europa.eurlex.nlex.query.FTSearchWords;
+import eu.europa.eurlex.nlex.query.FTSearchWords.Operator;
 import eu.europa.eurlex.nlex.query.Index;
 import eu.europa.eurlex.nlex.query.IntValue;
 import eu.europa.eurlex.nlex.query.Navigation;
-import eu.europa.eurlex.nlex.query.StringValue;
-import eu.europa.eurlex.nlex.query.WordsType;
-import eu.europa.eurlex.nlex.query.FTSearchWords.Operator;
 import eu.europa.eurlex.nlex.query.Navigation.Page;
 import eu.europa.eurlex.nlex.query.Request;
-import eu.europa.eurlex.nlex.query.StringComparator;
 import eu.europa.eurlex.nlex.query.Request.Criteria;
+import eu.europa.eurlex.nlex.query.StringComparator;
+import eu.europa.eurlex.nlex.query.StringValue;
+import eu.europa.eurlex.nlex.query.WordsType;
 
 /**
  * Parses the request.
@@ -37,11 +37,15 @@ import eu.europa.eurlex.nlex.query.Request.Criteria;
 public class QueryParser {
 
     private static final Logger log = LoggerFactory.getLogger(QueryParser.class);
+    
+    public static final String UTF16_BOM = "\uFEFF";
+    public static final char[] UTF8_BOM_C = { 0xEF, 0xBB, 0xBF };
+    public static final String UTF8_BOM = new String(UTF8_BOM_C);
 
     private QueryBuilder builder;
     private Request request;
 
-    public QueryParser(QueryBuilder builder, eu.europa.eurlex.nlex.query.Request request) {
+    public QueryParser(QueryBuilder builder, Request request) {
         this.builder = builder;
         this.request = request;
     }
@@ -107,7 +111,9 @@ public class QueryParser {
                 ContainsType contains = words.getContains();
                 if (contains != null) {
                     // simple filter by one value
-                    builder.filterIndex(Index.fromValue(idxName.getLocalPart()), contains.getValue(), StringComparator.CONTAINS);
+                    builder.filterIndex(Index.fromValue(idxName.getLocalPart()), 
+                            removeUTF8BOM(contains.getValue()), 
+                            StringComparator.CONTAINS);
                 } else {
                     parseFTIndexComplex(words, idxName);
                 }
@@ -149,12 +155,14 @@ public class QueryParser {
         for (JAXBElement<?>  b : booleanWords) {
             Object bv = b.getValue();
             if (bv instanceof ContainsType) {
-                FTSearchWords s = new FTSearchWords(((ContainsType) bv).getValue());
+                String value = removeUTF8BOM(((ContainsType) bv).getValue());
+                FTSearchWords s = new FTSearchWords(value);
                 root.addChild(s);
             } else if (bv instanceof BinaryOpWords) {
                 BinaryOpWords opw = (BinaryOpWords) bv;
                 List<JAXBElement<?>> children = opw.getBooleanWords();
-                FTSearchWords newRoot = new FTSearchWords(Operator.fromName(b.getName().getLocalPart()));
+                FTSearchWords newRoot = new FTSearchWords(
+                        Operator.fromName(b.getName().getLocalPart()));
                 root.addChild(newRoot);
                 parseBWords(newRoot, children);
             }
@@ -187,7 +195,8 @@ public class QueryParser {
             if (compare == null) {
                 compare = Comparator.EQ;
             }
-            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), y, m, d, compare);
+            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), 
+                    y, m, d, compare);
         }
     }
 
@@ -202,7 +211,8 @@ public class QueryParser {
             compare = Comparator.EQ;
         }
         if (idxName != null) {
-            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), iv.getValue(), compare);
+            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), 
+                    iv.getValue(), compare);
         }
     }
 
@@ -214,8 +224,23 @@ public class QueryParser {
         QName idxName = sv.getIdxName();
         if (idxName != null) {
             StringComparator compare = StringComparator.fromValue(sv.getCompare());
-            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), sv.getValue(), compare);
+            builder.filterIndex(Index.fromValue(idxName.getLocalPart()), 
+                    removeUTF8BOM(sv.getValue()), compare);
         }
     }
+    
+    /**
+     * Removes the Byte Order Mark from a string.
+     * @param s
+     * @return
+     */
+    public static String removeUTF8BOM(String s) {
+        if (s.startsWith(UTF16_BOM)) {
+            return s.substring(1);
+        } else if (s.startsWith(UTF8_BOM)) {
+            return s.substring(3);
+        }        
+        return s;
+    }    
     
 }
