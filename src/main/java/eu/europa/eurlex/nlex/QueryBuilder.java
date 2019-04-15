@@ -46,7 +46,8 @@ public interface QueryBuilder {
      * @param day a day (-1 means no value)
      * @param compare a comparator
      */
-    void filterIndex(Index indexName, int year, int month, int day, Comparator compare);
+    void filterIndex(Index indexName, int year, int month, int day, 
+            Comparator compare);
 
     /**
      * Filter an index by integer value.

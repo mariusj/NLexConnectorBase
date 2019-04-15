@@ -18,7 +18,8 @@ public interface ConnectorService {
     /**
      * Returns a string containing an N-Lex query. This query must never change, 
      * as it will be used by N-Lex as a non-regression test of your connector. 
-     * @param type the format of desired results (should always be <code>result-list.xsd</code>) 
+     * @param type the format of desired results (should always be 
+     * <code>result-list.xsd</code>). 
      * @return a sample N-Lex query
      */
     String testQuery(String type);

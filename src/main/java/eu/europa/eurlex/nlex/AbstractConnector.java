@@ -72,13 +72,13 @@ public abstract class AbstractConnector implements ConnectorService {
      * @param query a request string to parse
      * @return a request object
      */
-    protected eu.europa.eurlex.nlex.query.Request unmarshallRequest(String query) {
+    protected Request unmarshallRequest(String query) {
         try {
             query = insertNamespace(query);
-            JAXBContext ctx = JAXBContext.newInstance(eu.europa.eurlex.nlex.query.Request.class);
+            JAXBContext ctx = JAXBContext.newInstance(Request.class);
             Unmarshaller jaxbUnmarshaller = ctx.createUnmarshaller();
             StringReader r = new StringReader(query);
-            eu.europa.eurlex.nlex.query.Request request = (eu.europa.eurlex.nlex.query.Request) jaxbUnmarshaller.unmarshal(r);
+            Request request = (Request) jaxbUnmarshaller.unmarshal(r);
             return request;
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -94,7 +94,7 @@ public abstract class AbstractConnector implements ConnectorService {
      */
     protected boolean parseQuery(String query, QueryBuilder builder) {
         try {
-            eu.europa.eurlex.nlex.query.Request request = unmarshallRequest(query);
+            Request request = unmarshallRequest(query);
             QueryParser parser = new QueryParser(builder, request);
             parser.parse();
             return true;
@@ -106,12 +106,14 @@ public abstract class AbstractConnector implements ConnectorService {
 
     @Override
     public String request(String query) {
-        ResultBuilder resultBuilder = new ResultBuilder(getSiteUrl(), getConnectorUrl());
+        ResultBuilder resultBuilder = new ResultBuilder(getSiteUrl(), 
+                getConnectorUrl());
         QueryBuilder builder = getQueryBuilder();
         if (parseQuery(query, builder)) {
             QueryResult results = getResults(builder);
             if (results != null) {
-                resultBuilder.createDocuments(null, results.getTotalCount(), getPageSize(), builder.getPage());
+                resultBuilder.createDocuments(null, results.getTotalCount(), 
+                        getPageSize(), builder.getPage());
                 resultBuilder.addDocuments(results);
             } else {
                 resultBuilder.addError(ErrorCode.DB_UNAVAILABLE);

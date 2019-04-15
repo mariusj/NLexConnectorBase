@@ -103,7 +103,8 @@ public class ResultBuilder {
      * @param pageNum the current page number (can be read from {@link QueryBuilder#getPage()})
      * @return a container for documents
      */
-    public Documents createDocuments(String requestId, int hits, int pageSize, int pageNum) {
+    public Documents createDocuments(String requestId, int hits, int pageSize, 
+            int pageNum) {
         result.setStatus("OK");
         ResultList results = new ResultList();
         result.setResultList(results);
@@ -122,8 +123,9 @@ public class ResultBuilder {
      * @param pageNum the current page number
      * @return a Navigation structure
      */
-    protected Navigation createNav(String requestId, int hits, int pageSize, int pageNum) {
-        eu.europa.eurlex.nlex.query.ResultList.Navigation nav = new eu.europa.eurlex.nlex.query.ResultList.Navigation();
+    protected Navigation createNav(String requestId, int hits, int pageSize, 
+            int pageNum) {
+        Navigation nav = new Navigation();
         nav.setHits(BigInteger.valueOf(hits));
         if (requestId != null) {
             nav.setRequestId(requestId);
@@ -247,7 +249,8 @@ public class ResultBuilder {
      */
     protected void fillDate(NlexDate dateXML, LocalDate date) {
         try {
-            XMLGregorianCalendar y = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+            XMLGregorianCalendar y = 
+                    DatatypeFactory.newInstance().newXMLGregorianCalendar();
             y.setYear(date.getYear());            
             dateXML.setYear(y);
             dateXML.setMonth(BigInteger.valueOf(date.getMonthValue()));
@@ -263,9 +266,10 @@ public class ResultBuilder {
      */
     public String marshall() {
         try {
-            eu.europa.eurlex.nlex.query.ObjectFactory of = new eu.europa.eurlex.nlex.query.ObjectFactory();
+            eu.europa.eurlex.nlex.query.ObjectFactory of = 
+                    new eu.europa.eurlex.nlex.query.ObjectFactory();
             JAXBElement<Result> resultJAXB = of.createResult(result);
-            JAXBContext jaxbContext = JAXBContext.newInstance(eu.europa.eurlex.nlex.query.Result.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(Result.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             StringWriter writer = new StringWriter();
