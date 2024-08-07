@@ -1,16 +1,15 @@
 package eu.europa.eurlex.nlex;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import eu.europa.eurlex.nlex.query.BinaryOp;
 import eu.europa.eurlex.nlex.query.ContainsType;
@@ -19,6 +18,7 @@ import eu.europa.eurlex.nlex.query.Request;
 import eu.europa.eurlex.nlex.query.Request.Criteria;
 import eu.europa.eurlex.nlex.query.StringValue;
 import eu.europa.eurlex.nlex.query.WordsType;
+import jakarta.xml.bind.JAXBElement;
 
 public class AbstractConnectorTest extends AbstractConnector {
 
@@ -38,13 +38,13 @@ public class AbstractConnectorTest extends AbstractConnector {
         StringValue str = (StringValue) objects.get(0);
         assertEquals("LAW", str.getValue());
         QName idxName = str.getIdxName();
-        assertNotNull("index should not be null", idxName);
+        assertNotNull(idxName, "index should not be null");
         assertEquals("doc_type", idxName.getLocalPart());
         @SuppressWarnings("unchecked")
         JAXBElement<WordsType> jaxb = (JAXBElement<WordsType>) objects.get(1);
         WordsType words = jaxb.getValue();
         assertNotNull(words);
-        assertNotNull("index should not be null", words.getIdxName());
+        assertNotNull(words.getIdxName(),"index should not be null");
         ContainsType contains = words.getContains();
         assertNotNull(contains);
         String value = contains.getValue();

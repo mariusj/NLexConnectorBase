@@ -4,10 +4,6 @@ import java.io.StringWriter;
 import java.math.BigInteger;
 import java.time.LocalDate;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -34,6 +30,10 @@ import eu.europa.eurlex.nlex.query.ResultList.Documents;
 import eu.europa.eurlex.nlex.query.ResultList.Navigation;
 import eu.europa.eurlex.nlex.query.Title;
 import eu.europa.eurlex.nlex.query.Use;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
 
 /**
  * A wrapper for a connector response. This class contains methods that simplify

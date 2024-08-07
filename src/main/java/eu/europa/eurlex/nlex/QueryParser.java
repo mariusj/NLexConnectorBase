@@ -3,12 +3,12 @@ package eu.europa.eurlex.nlex;
 import java.math.BigInteger;
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBElement;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import eu.europa.eurlex.nlex.query.BinaryOp;
 import eu.europa.eurlex.nlex.query.BinaryOpWords;
@@ -36,7 +36,7 @@ import eu.europa.eurlex.nlex.query.WordsType;
  */
 public class QueryParser {
 
-    private static final Logger log = LoggerFactory.getLogger(QueryParser.class);
+    private static final Logger log = LogManager.getLogger(QueryParser.class);
     
     public static final String UTF16_BOM = "\uFEFF";
     public static final char[] UTF8_BOM_C = { 0xEF, 0xBB, 0xBF };
